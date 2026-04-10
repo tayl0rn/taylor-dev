@@ -115,6 +115,15 @@
       white-space: nowrap;
     }
 
+    #greeting-word {
+      display: inline-block;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    #greeting-word.fade-out {
+      opacity: 0;
+      transform: translateY(-6px);
+    }
+
     .cursor-bar {
       display: inline-block;
       width: 3px;
@@ -593,7 +602,7 @@
   <section class="hero">
     <div class="hero-top">
       <h1 class="hero-title">
-        <span class="intro-line">Hi, I'm Taylor —</span>
+        <span class="intro-line"><span id="greeting-word">Hi</span>, I'm Taylor —</span>
         a <span class="cycling-wrapper"><span class="cycling-word" id="cycling-word"></span><span class="cursor-bar"></span></span>
       </h1>
     </div>
@@ -613,7 +622,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <span class="footer-name">Taylor</span>
+    <!-- <span class="footer-name">Taylor</span> -->
     <ul class="footer-links">
       <li><a href="https://github.com" target="_blank">GitHub</a></li>
       <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
@@ -667,6 +676,21 @@
       setTimeout(type, deleting ? DELETE_SPEED : TYPE_SPEED);
     }
     setTimeout(type, 1200);
+
+    // GREETING CYCLE
+    const greetings = ['Hi', 'Hola', '안녕하세요', 'Xin chào', 'こんにちは'];
+    const greetingEl = document.getElementById('greeting-word');
+    let greetingIndex = 0;
+
+    function cycleGreeting() {
+      greetingEl.classList.add('fade-out');
+      setTimeout(() => {
+        greetingIndex = (greetingIndex + 1) % greetings.length;
+        greetingEl.textContent = greetings[greetingIndex];
+        greetingEl.classList.remove('fade-out');
+      }, 420);
+    }
+    setInterval(cycleGreeting, 3000);
 
     // 3D CAROUSEL
     const ring = document.getElementById('carousel-ring');
