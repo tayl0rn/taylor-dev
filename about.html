@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Taylor</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --ink: #000000;
+      --mid: #888888;
+      --light: #e0e0e0;
+      --sans: -apple-system, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+      --mono: -apple-system, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 400;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 48px;
+      background: var(--bg);
+    }
+    .nav-name {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      opacity: 0.5;
+      transition: opacity 0.2s;
+    }
+    .nav-links a:hover { opacity: 1; }
+    .nav-links a.active { opacity: 1; }
+
+    /* PAGE */
+    .page {
+      padding: 140px 48px 120px;
+    }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 64px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--light);
+    }
+
+    /* ABOUT LAYOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .about-photo-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      background: var(--light);
+    }
+
+    .about-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(20%);
+    }
+
+    .about-photo-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: var(--mid);
+      text-transform: uppercase;
+    }
+
+    .about-right {
+      padding-top: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .about-name {
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .about-bio {
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--mid);
+      max-width: 480px;
+    }
+
+    .about-meta {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .about-meta li {
+      display: flex;
+      gap: 24px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--light);
+      font-size: 13px;
+    }
+
+    .about-meta li:first-child {
+      border-top: 1px solid var(--light);
+    }
+
+    .meta-key {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--mid);
+      min-width: 80px;
+      padding-top: 2px;
+    }
+
+    .meta-val { font-weight: 500; }
+
+    /* FOOTER */
+    footer {
+      padding: 48px 48px 56px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--light);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--ink); }
+
+    .footer-copy {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--light);
+      letter-spacing: 0.06em;
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 20px 24px; }
+      .page { padding: 100px 24px 80px; }
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      footer { padding: 32px 24px; flex-direction: column; gap: 24px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-name">Taylor</a>
+    <ul class="nav-links">
+      <li><a href="work.html">Work</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="life.html">Life</a></li>
+      <li><a href="writing.html">Writing</a></li>
+      <li><a href="mailto:hello@taylor.dev">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+    <div class="section-label">About</div>
+    <div class="about-grid">
+      <div class="about-left">
+        <div class="about-photo-wrap">
+          <!-- Replace with: <img src="your-photo.jpg" alt="Taylor" /> -->
+          <div class="about-photo-placeholder">your photo here</div>
+        </div>
+      </div>
+      <div class="about-right">
+        <h1 class="about-name">Taylor</h1>
+        <p class="about-bio">
+          Write a short bio here — who you are, what you care about, what drives your work.
+          A sentence or two about your background and what makes you, you.
+        </p>
+        <ul class="about-meta">
+          <li><span class="meta-key">Role</span><span class="meta-val">Software Engineer</span></li>
+          <li><span class="meta-key">Based</span><span class="meta-val">Your City, State</span></li>
+          <li><span class="meta-key">School</span><span class="meta-val">Your University</span></li>
+          <li><span class="meta-key">Email</span><span class="meta-val">hello@taylor.dev</span></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <ul class="footer-links">
+      <li><a href="https://github.com" target="_blank">GitHub</a></li>
+      <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+      <li><a href="mailto:hello@taylor.dev">Email</a></li>
+    </ul>
+    <span class="footer-copy">2026</span>
+  </footer>
+
+</body>
+</html>

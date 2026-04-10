@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your first post title — Taylor</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #ffffff;
+      --ink: #000000;
+      --mid: #888888;
+      --light: #e0e0e0;
+      --sans: -apple-system, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+      --mono: -apple-system, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-weight: 400; }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 48px;
+    }
+    .nav-name {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .nav-back {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--ink); }
+
+    .post {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 140px 48px 120px;
+    }
+
+    .post-meta {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 24px;
+    }
+
+    .post-title {
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 48px;
+    }
+
+    .post-body {
+      font-size: 17px;
+      line-height: 1.75;
+      font-weight: 300;
+      color: #222;
+    }
+
+    .post-body p { margin-bottom: 24px; }
+
+    .post-body h2 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 48px 0 16px;
+    }
+
+    .post-body a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    footer {
+      padding: 48px;
+      border-top: 1px solid var(--light);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-copy {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--light);
+      letter-spacing: 0.06em;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="../index.html" class="nav-name">Taylor</a>
+    <a href="../../writing.html" class="nav-back">← Writing</a>
+  </nav>
+
+  <article class="post">
+    <div class="post-meta">Apr 2026</div>
+    <h1 class="post-title">Your first post title</h1>
+
+    <div class="post-body">
+      <p>Write your post content here. This is the opening paragraph — make it interesting.</p>
+
+      <h2>A section heading</h2>
+
+      <p>More content goes here. You can add as many paragraphs, headings, and links as you need.</p>
+
+      <p>Keep writing...</p>
+    </div>
+  </article>
+
+  <footer>
+    <a href="../../writing.html" class="nav-back">← Back to writing</a>
+    <span class="footer-copy">2026</span>
+  </footer>
+</body>
+</html>

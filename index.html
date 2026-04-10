@@ -117,11 +117,6 @@
 
     #greeting-word {
       display: inline-block;
-      transition: opacity 0.4s ease, transform 0.4s ease;
-    }
-    #greeting-word.fade-out {
-      opacity: 0;
-      transform: translateY(-6px);
     }
 
     .cursor-bar {
@@ -255,45 +250,88 @@
       background: var(--light);
     }
 
-    .about-text {
-      font-family: var(--sans);
-      font-size: clamp(26px, 3.2vw, 42px);
-      line-height: 1.15;
-      font-weight: 700;
-      letter-spacing: -0.025em;
+    /* ABOUT */
+    .about-photo-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      background: var(--light);
     }
 
-    .about-text em {
-      font-style: normal;
-      font-weight: 300;
+    .about-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(20%);
+    }
+
+    .about-photo-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.1em;
       color: var(--mid);
+      text-transform: uppercase;
     }
 
-    .about-right { padding-top: 60px; }
+    .about-right {
+      padding-top: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
 
-    .stack-list {
+    .about-name {
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .about-bio {
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--mid);
+      max-width: 480px;
+    }
+
+    .about-meta {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 0;
     }
 
-    .stack-item {
+    .about-meta li {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 0;
+      gap: 24px;
+      padding: 14px 0;
       border-bottom: 1px solid var(--light);
       font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.02em;
     }
 
-    .stack-item span {
+    .about-meta li:first-child {
+      border-top: 1px solid var(--light);
+    }
+
+    .meta-key {
       font-family: var(--mono);
       font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       color: var(--mid);
-      letter-spacing: 0.06em;
+      min-width: 80px;
+      padding-top: 2px;
+    }
+
+    .meta-val {
+      font-weight: 500;
     }
 
     /* WORK SECTION */
@@ -590,10 +628,10 @@
   <nav>
     <a href="#" class="nav-name">Taylor</a>
     <ul class="nav-links">
-      <li><a href="#work">Work</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#life">Life</a></li>
-      <li><a href="#blog">Writing</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="life.html">Life</a></li>
+      <li><a href="writing.html">Writing</a></li>
       <li><a href="mailto:hello@taylor.dev">Contact</a></li>
     </ul>
   </nav>
