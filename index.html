@@ -681,16 +681,10 @@
     const greetings = ['Hi', 'Hola', '안녕하세요', 'Xin chào', 'こんにちは'];
     const greetingEl = document.getElementById('greeting-word');
     let greetingIndex = 0;
-
-    function cycleGreeting() {
-      greetingEl.classList.add('fade-out');
-      setTimeout(() => {
-        greetingIndex = (greetingIndex + 1) % greetings.length;
-        greetingEl.textContent = greetings[greetingIndex];
-        greetingEl.classList.remove('fade-out');
-      }, 420);
-    }
-    setInterval(cycleGreeting, 3000);
+    setInterval(() => {
+      greetingIndex = (greetingIndex + 1) % greetings.length;
+      greetingEl.textContent = greetings[greetingIndex];
+    }, 500);
 
     // 3D CAROUSEL
     const ring = document.getElementById('carousel-ring');
